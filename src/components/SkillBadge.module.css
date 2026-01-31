@@ -1,0 +1,26 @@
+.badge {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: var(--color-background-white);
+  color: var(--color-text-dark);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  border: 2px solid var(--color-neutral-light);
+  transition: all var(--transition-fast);
+  cursor: default;
+}
+
+.badge:hover {
+  transform: scale(1.1);
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+  box-shadow: 0 0 15px rgba(0, 187, 249, 0.3);
+}
+
+@media (max-width: 640px) {
+  .badge {
+    padding: 0.4rem 0.8rem;
+    font-size: var(--font-size-xs);
+  }
+}

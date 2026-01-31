@@ -1,25 +1,28 @@
 import React from "react";
+import FadeInSection from "./FadeInSection";
+import ProjectCard from "./ProjectCard";
+import { projects } from "../data/projects";
+import styles from "./Projects.module.css";
 
 function Projects() {
-  const projectList = [
-    { name: "Project 1", description: "Description of project 1", link: "#" },
-    { name: "Project 2", description: "Description of project 2", link: "#" },
-  ];
-
   return (
-    <section id="projects">
-      <h2>Projects</h2>
-      <ul>
-        {projectList.map((project, index) => (
-          <li key={index}>
-            <h3>{project.name}</h3>
-            <p>{project.description}</p>
-            <a href={project.link} target="_blank" rel="noopener noreferrer">
-              View Project
-            </a>
-          </li>
-        ))}
-      </ul>
+    <section id="projects" className={styles.projects}>
+      <div className={styles.container}>
+        <FadeInSection>
+          <h2 className={styles.sectionTitle}>Projects</h2>
+          <p className={styles.subtitle}>
+            A selection of projects showcasing my work in full-stack development, blockchain, and data-driven applications
+          </p>
+        </FadeInSection>
+
+        <div className={styles.grid}>
+          {projects.map((project, index) => (
+            <FadeInSection key={project.id} delay={index * 100 + 100}>
+              <ProjectCard project={project} />
+            </FadeInSection>
+          ))}
+        </div>
+      </div>
     </section>
   );
 }

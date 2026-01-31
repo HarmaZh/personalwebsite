@@ -1,18 +1,24 @@
 import React from "react";
 import Header from "./components/header";
+import Hero from "./components/hero";
 import About from "./components/about";
+import Skills from "./components/skills";
+import Experience from "./components/experience";
 import Projects from "./components/projects";
-import Resume from "./components/resume";
+import Contact from "./components/contact";
 import Footer from "./components/footer";
 
 function App() {
   return (
-    <div>
+    <div className="app">
       <Header />
       <main>
+        <Hero />
         <About />
+        <Experience />
         <Projects />
-        <Resume />
+        <Skills />
+        <Contact />
       </main>
       <Footer />
     </div>
