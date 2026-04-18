@@ -5,11 +5,11 @@ export const experience = [
     company: "Fablab",
     period: "December 2025 - Present",
     description: [
-      "Designed and built internal full-stack admin portal managing lesson plans, equipment inventory, and instructor workflows, reducing manual coordination by ~30%",
-      "Developed backend services and databases tracking class registrations, enrollment data, and material usage for 100+ registrations",
+      "Architected a full-stack admin portal with React, TypeScript, and Express backed by Prisma ORM and PostgreSQL, centralizing lesson plan, inventory, and instructor workflow management and reducing manual coordination by ~30%",
+      "Built a Python ETL pipeline with pandas and psycopg2 to extract, clean, and load registration data into PostgreSQL, automating deduplication and validation across 100+ records",
       "Delivered structured instruction breaking down complex concepts into workflows, reinforcing analysis and documentation"
     ],
-    technologies: ["React", "Node.js", "MongoDB", "Express", "JavaScript"],
+    technologies: ["React", "TypeScript", "Express", "Prisma", "PostgreSQL", "Python", "Node.js"],
     companyUrl: "https://www.fablabeducation.org/"
   },
   {
@@ -50,6 +50,18 @@ export const experience = [
     ],
     technologies: ["HTML", "CSS", "D3.js", "Tableau", "JavaScript"],
     companyUrl: null
+  },
+  {
+    id: 6,
+    title: "Software Development Internship",
+    company: "Radical AI",
+    period: "July 2024 - September 2024",
+    description: [
+      "Optimized user onboarding for Radical AI's web platforms by redesigning interfaces with HTML, CSS, JavaScript, and Firebase, achieving a 14% improvement in onboarding efficiency through iterative user testing",
+      "Integrated token APIs with Firebase to enable seamless authentication and reduce the risk of unauthorized access via real-time database validation"
+    ],
+    technologies: ["HTML", "CSS", "JavaScript", "Firebase"],
+    companyUrl: "https://lab.radicalai.app/"
   },
   {
     id: 5,

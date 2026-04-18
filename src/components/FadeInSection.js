@@ -8,25 +8,20 @@ function FadeInSection({ children, className = "", delay = 0 }) {
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          setTimeout(() => {
-            setIsVisible(true);
-          }, delay);
+          const id = setTimeout(() => setIsVisible(true), delay);
+          return () => clearTimeout(id);
         }
       });
     }, {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
+      threshold: 0.08,
+      rootMargin: '0px 0px -40px 0px'
     });
 
     const currentElement = domRef.current;
-    if (currentElement) {
-      observer.observe(currentElement);
-    }
+    if (currentElement) observer.observe(currentElement);
 
     return () => {
-      if (currentElement) {
-        observer.unobserve(currentElement);
-      }
+      if (currentElement) observer.unobserve(currentElement);
     };
   }, [delay]);
 
@@ -36,8 +31,9 @@ function FadeInSection({ children, className = "", delay = 0 }) {
       className={`${className} ${isVisible ? 'fadeInUp' : ''}`}
       style={{
         opacity: isVisible ? 1 : 0,
-        transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
-        transition: 'opacity 0.6s ease-out, transform 0.6s ease-out'
+        transform: isVisible ? 'translateY(0)' : 'translateY(12px)',
+        transition: 'opacity 320ms cubic-bezier(0.2, 0.8, 0.2, 1), transform 320ms cubic-bezier(0.2, 0.8, 0.2, 1)',
+        willChange: 'opacity, transform'
       }}
     >
       {children}
